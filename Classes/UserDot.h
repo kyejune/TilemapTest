@@ -11,7 +11,7 @@
 
 #include "cocos2d.h"
 
-USING_NS_CC; // << 이거 뭐지?
+USING_NS_CC;
 
 class UserDot: public cocos2d::Sprite
 {

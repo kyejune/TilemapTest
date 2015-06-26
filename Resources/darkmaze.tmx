@@ -1,95 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="20" height="36" tilewidth="32" tileheight="32" nextobjectid="97">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="10" height="16" tilewidth="32" tileheight="32" nextobjectid="104">
  <tileset firstgid="1" name="tmw_desert_spacing" tilewidth="32" tileheight="32" spacing="1" margin="1">
   <image source="tmw_desert_spacing.png" width="265" height="199"/>
  </tileset>
- <layer name="bg" width="20" height="36">
+ <layer name="bg" width="10" height="16">
   <data encoding="base64" compression="zlib">
-   eJzt0kEKACAIRFFP4tr7n7B9iKVOVDCLv/ShoIqIMsYY+zYDWwYyzQnlVL3IyrrRbNbc3WtlVh3PRFid29H/97LXtWYT6aGsE97NBtdHWJk=
+   eJyTY2BgkBvFo3iAMACZWRLB
   </data>
  </layer>
- <layer name="wall" width="20" height="36">
-  <data encoding="base64" compression="zlib">
-   eJwTYWBgEAJiUQYIEIHyycEgM7gZqAc4R80bNW/UvFHzRs0bNW/UvFHzRs0bNY9C82SAmIlELAvVj64XJA4AY54EmQ==
-  </data>
- </layer>
- <objectgroup name="wallobj">
-  <object id="19" x="130" y="0">
-   <polyline points="0,0 0,31 12,30 16,16 495,16 495,1130 367,1131 367,1117 350,1119 352,1154 517,1151 514,0 0,0"/>
+ <objectgroup name="linewall">
+  <object id="102" x="256" y="511">
+   <polyline points="-64,0 -65,-480 -193,-479.667 -192.667,-254.667 -256,-255"/>
   </object>
-  <object id="20" x="95" y="0">
-   <polyline points="0,0 0,32 -15,29 -15,15 -79,15 -79,1132 336,1133 337,1119 354,1119 353,1152 -126,1147 -101,0 0,0"/>
+  <object id="103" x="2" y="322">
+   <polyline points="-0.666667,-1.33333 63,-1 62.6667,125.667 125.667,125.667 125,-259"/>
   </object>
-  <object id="28" x="223" y="240">
-   <polyline points="0,0 103,-143 193,6 98,-78 -5,36 21,-6 2,1"/>
-  </object>
-  <object id="31" gid="38" x="128" y="1109"/>
-  <object id="32" gid="38" x="153" y="1109"/>
-  <object id="33" gid="38" x="162" y="1108"/>
-  <object id="34" gid="38" x="186" y="1108"/>
-  <object id="35" gid="38" x="192" y="1108"/>
-  <object id="36" gid="38" x="212" y="1108"/>
-  <object id="37" gid="38" x="249" y="1106"/>
-  <object id="38" gid="38" x="277" y="1108"/>
-  <object id="39" gid="38" x="298" y="1109"/>
-  <object id="40" gid="38" x="315" y="1111"/>
-  <object id="41" gid="38" x="338" y="1113"/>
-  <object id="42" gid="38" x="352" y="1114"/>
-  <object id="43" gid="38" x="372" y="1113"/>
-  <object id="44" gid="38" x="388" y="1111"/>
-  <object id="45" gid="38" x="405" y="1104"/>
-  <object id="46" gid="38" x="223" y="1101"/>
-  <object id="47" gid="38" x="13" y="1107"/>
-  <object id="48" gid="38" x="53" y="1099"/>
-  <object id="49" gid="38" x="81" y="1102"/>
-  <object id="50" gid="38" x="97" y="1113"/>
-  <object id="51" gid="38" x="117" y="1121"/>
-  <object id="52" gid="38" x="137" y="1121"/>
-  <object id="53" gid="38" x="490" y="1100"/>
-  <object id="54" gid="38" x="507" y="1106"/>
-  <object id="55" gid="38" x="533" y="1109"/>
-  <object id="56" gid="38" x="547" y="1112"/>
-  <object id="57" gid="38" x="553" y="1112"/>
-  <object id="58" gid="38" x="563" y="1112"/>
-  <object id="59" gid="38" x="575" y="1108"/>
-  <object id="60" gid="38" x="581" y="1105"/>
-  <object id="61" gid="38" x="591" y="1107"/>
-  <object id="62" gid="38" x="597" y="1109"/>
-  <object id="64" gid="38" x="242" y="1005"/>
-  <object id="65" gid="38" x="323" y="1032"/>
-  <object id="66" gid="38" x="398" y="1037"/>
-  <object id="67" gid="38" x="424" y="998"/>
-  <object id="68" gid="38" x="301" y="981"/>
-  <object id="69" gid="38" x="170" y="1003"/>
-  <object id="70" gid="38" x="127" y="1039"/>
-  <object id="71" gid="38" x="102" y="1003"/>
-  <object id="72" gid="38" x="75" y="986"/>
-  <object id="73" gid="38" x="511" y="1009"/>
-  <object id="74" gid="38" x="508" y="962"/>
-  <object id="75" gid="38" x="506" y="1055"/>
-  <object id="76" gid="38" x="479" y="1028"/>
-  <object id="78" gid="30" x="491" y="931"/>
-  <object id="79" gid="30" x="506" y="963"/>
-  <object id="80" gid="30" x="518" y="979"/>
-  <object id="81" gid="30" x="508" y="1031"/>
-  <object id="82" gid="30" x="526" y="1072"/>
-  <object id="83" gid="30" x="476" y="1106"/>
-  <object id="84" gid="30" x="476" y="1109"/>
-  <object id="85" gid="30" x="326" y="1110"/>
-  <object id="86" gid="30" x="240" y="1112"/>
-  <object id="87" gid="30" x="121" y="1123"/>
-  <object id="88" gid="30" x="92" y="1122"/>
-  <object id="89" gid="30" x="190" y="1105"/>
-  <object id="90" gid="30" x="212" y="1107"/>
-  <object id="91" gid="30" x="285" y="1103"/>
-  <object id="92" gid="30" x="328" y="1103"/>
-  <object id="93" gid="30" x="353" y="1108"/>
-  <object id="94" gid="30" x="371" y="1109"/>
-  <object id="95" gid="30" x="381" y="1109"/>
-  <object id="96" gid="30" x="364" y="1109"/>
- </objectgroup>
- <objectgroup name="obj">
-  <object id="25" name="exit" x="97" y="0" width="29" height="31"/>
-  <object id="27" name="enter" x="450" y="1086" width="28" height="30"/>
  </objectgroup>
 </map>

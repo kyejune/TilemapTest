@@ -22,8 +22,8 @@ namespace DarkMazeSpec {
     static float stepW;
     static float stepH;
     
-    static float stepWidthMax = 8;
-    static float stepHeightMax = 12;
+    static float stepWidthMax = 12;
+    static float stepHeightMax = 16;
     
     
     enum Direction

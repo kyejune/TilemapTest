@@ -8,6 +8,9 @@
 #include "GLES-Render.h"
 #include "cocos2dx-alertview/AlertView.h"
 #include "DarkMazeSpec.h"
+//#include "b2DebugDraw.h"
+//#include "FPB2DebugDrawLayer.h"
+#include "DebugMap.h"
 
 
 class MainScene : public cocos2d::Scene
@@ -25,9 +28,9 @@ public:
     
     
     // a selector callback
-    void menuCloseCallback(cocos2d::Ref* pSender);
+//    void menuCloseCallback(cocos2d::Ref* pSender);
     
-    void OnUpdate( float dt );
+//    void OnUpdate( float dt );
     
     void OnAcceleration( cocos2d::Acceleration *acc, cocos2d::Event *event );
     
@@ -47,6 +50,7 @@ public:
     void onTouchCancelled(Touch *touch, Event *event);
     
     bool isTouchDown;
+    bool isMoving;
     
     cocos2d::Size visibleSize;
     
@@ -54,8 +58,7 @@ public:
     float currentTouchPos[2];
     
     void update(float dt);
-    
-    
+    void doneMoving();
     
     int coordinates[2];
 //    std::vector<int> getCoord( float x, float y );
@@ -68,9 +71,12 @@ public:
     
     //// OVERRIDE ////
 //    virtual void draw(Renderer *renderer, const Mat4 &transform, uint32_t flags) override;
-    
+//    
 
 private:
+    
+    
+    float MOVING_TIME = 0.4;
     
     float PTM_RATIO = 32;
     
@@ -80,33 +86,46 @@ private:
     float m_accelerateFactor = 100;
     float m_accelerateRate   = .1;
     
+//    cocos2d::Vec2 targetPosition;
+//    float targetRotation;
+    
+    Vec2 nextPos;
+    float nextRot = 0;
+    
     double accX;
     double accY;
     
     void getNewPosition( double ax, double ay );
 //    bool isHitWall( float tx, float ty );
-    void settingBox2d();
+//    void settingBox2d();
     
-    void makeBall();
+//    void makeBall();
+    
+    void fixUserAtCenter();
     
     
-    
-    GLESDebugDraw* debugDraw;
+//    GLESDebugDraw* debugDraw;
     
 //    Sprite* container = Sprite::create();
 //    Sprite* mapContainer = Sprite::create();
     TMXTiledMap* tmapBg;
-    Layer* gameLayer = Layer::create();
+    Layer* gameLayer;// = Layer::create();
+    DebugMap* dmap;
+//    Sprite* gameSprite = Sprite::create();
     
     UserDot* ud;
-    b2Body* udBody;
-    b2Fixture* udFix;
-    b2CircleShape* udShape = new b2CircleShape();
-    
-    b2World* world;
-    b2Body* body;
+//    b2Body* udBody;
+//    b2Fixture* udFix;
+//    b2CircleShape* udShape = new b2CircleShape();
+//    
+//    b2World* world;
+//    b2Body* body;
+//    FPB2DebugDrawLayer* debugDraw;
     
     b2Vec2 exitPos;
+    
+    
+    Vec2 rotatePoint( Vec2 anchor, Vec2 point, float angle );
     
 };
 

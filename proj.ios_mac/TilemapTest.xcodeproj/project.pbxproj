@@ -68,10 +68,12 @@
 		CEBCFF381AD7AC7C0086B134 /* userdot.png in Resources */ = {isa = PBXBuildFile; fileRef = CEBCFF371AD7AC7C0086B134 /* userdot.png */; };
 		CEE3A9861AE742D300DAB429 /* DarkMazeSpec.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CEE3A9841AE742D300DAB429 /* DarkMazeSpec.cpp */; };
 		CEE520261AE8D55E00122252 /* AlertView.mm in Sources */ = {isa = PBXBuildFile; fileRef = CEE5201D1AE8D55E00122252 /* AlertView.mm */; };
+		CEE68AFD1B37A8FA00F278D1 /* VisibleRect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CEE68AFB1B37A8FA00F278D1 /* VisibleRect.cpp */; };
+		CEE73A6F1B3BC86100CC3AEA /* DebugMap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CEE73A6D1B3BC86100CC3AEA /* DebugMap.cpp */; };
 		CEE747C51B3406B20083499B /* GameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CEE747C31B3406B20083499B /* GameScene.cpp */; };
 		CEE976D41B32894800887BA2 /* darkmaze.tmx in Resources */ = {isa = PBXBuildFile; fileRef = CEE976D31B32894800887BA2 /* darkmaze.tmx */; };
-		CEE976D61B32897300887BA2 /* darkmaze.tmx in Resources */ = {isa = PBXBuildFile; fileRef = CEE976D51B32897300887BA2 /* darkmaze.tmx */; };
 		CEF3D27B1ADE371200F3E995 /* b2Util.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CEF3D2791ADE371200F3E995 /* b2Util.cpp */; };
+		CEF4CB831B38014C00E9F2D9 /* FPB2DebugDrawLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CEF4CB811B38014C00E9F2D9 /* FPB2DebugDrawLayer.cpp */; };
 		CEFA33BC1AE5F731002ADE42 /* b2DebugDraw.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CEFA33BA1AE5F731002ADE42 /* b2DebugDraw.cpp */; };
 		CEFA33BF1AE620FD002ADE42 /* GLES-Render.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CEFA33BD1AE620FD002ADE42 /* GLES-Render.cpp */; };
 		D44C620C132DFF330009C878 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620B132DFF330009C878 /* OpenAL.framework */; };
@@ -174,12 +176,17 @@
 		CEE3A9851AE742D300DAB429 /* DarkMazeSpec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DarkMazeSpec.h; sourceTree = "<group>"; };
 		CEE5200E1AE8D55E00122252 /* AlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertView.h; sourceTree = "<group>"; };
 		CEE5201D1AE8D55E00122252 /* AlertView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AlertView.mm; sourceTree = "<group>"; };
+		CEE68AFB1B37A8FA00F278D1 /* VisibleRect.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = VisibleRect.cpp; sourceTree = "<group>"; };
+		CEE68AFC1B37A8FA00F278D1 /* VisibleRect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VisibleRect.h; sourceTree = "<group>"; };
+		CEE73A6D1B3BC86100CC3AEA /* DebugMap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DebugMap.cpp; sourceTree = "<group>"; };
+		CEE73A6E1B3BC86100CC3AEA /* DebugMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DebugMap.h; sourceTree = "<group>"; };
 		CEE747C31B3406B20083499B /* GameScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameScene.cpp; sourceTree = "<group>"; };
 		CEE747C41B3406B20083499B /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
 		CEE976D31B32894800887BA2 /* darkmaze.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = darkmaze.tmx; sourceTree = "<group>"; };
-		CEE976D51B32897300887BA2 /* darkmaze.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = darkmaze.tmx; sourceTree = "<group>"; };
 		CEF3D2791ADE371200F3E995 /* b2Util.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = b2Util.cpp; sourceTree = "<group>"; };
 		CEF3D27A1ADE371200F3E995 /* b2Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = b2Util.h; sourceTree = "<group>"; };
+		CEF4CB811B38014C00E9F2D9 /* FPB2DebugDrawLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FPB2DebugDrawLayer.cpp; sourceTree = "<group>"; };
+		CEF4CB821B38014C00E9F2D9 /* FPB2DebugDrawLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPB2DebugDrawLayer.h; sourceTree = "<group>"; };
 		CEFA33BA1AE5F731002ADE42 /* b2DebugDraw.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = b2DebugDraw.cpp; sourceTree = "<group>"; };
 		CEFA33BB1AE5F731002ADE42 /* b2DebugDraw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = b2DebugDraw.h; sourceTree = "<group>"; };
 		CEFA33BD1AE620FD002ADE42 /* GLES-Render.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "GLES-Render.cpp"; sourceTree = "<group>"; };
@@ -305,7 +312,6 @@
 		46880B7519C43A67006E1F66 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				CEE976D51B32897300887BA2 /* darkmaze.tmx */,
 				CEE976D31B32894800887BA2 /* darkmaze.tmx */,
 				CEBCFF371AD7AC7C0086B134 /* userdot.png */,
 				CEAD147B1AD67C4200003DA6 /* tmw_desert_spacing.png */,
@@ -322,23 +328,24 @@
 		46880B8319C43A87006E1F66 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				CEE68AFE1B37B01F00F278D1 /* b2 */,
+				CEE68AFB1B37A8FA00F278D1 /* VisibleRect.cpp */,
+				CEE68AFC1B37A8FA00F278D1 /* VisibleRect.h */,
 				CEE5200C1AE8D55E00122252 /* cocos2dx-alertview */,
 				CEFA33BD1AE620FD002ADE42 /* GLES-Render.cpp */,
 				CEFA33BE1AE620FD002ADE42 /* GLES-Render.h */,
-				CEFA33BA1AE5F731002ADE42 /* b2DebugDraw.cpp */,
-				CEFA33BB1AE5F731002ADE42 /* b2DebugDraw.h */,
 				46880B8419C43A87006E1F66 /* AppDelegate.cpp */,
 				46880B8519C43A87006E1F66 /* AppDelegate.h */,
 				46880B8619C43A87006E1F66 /* MainScene.cpp */,
 				46880B8719C43A87006E1F66 /* MainScene.h */,
 				CEBCFF341AD7A4940086B134 /* UserDot.cpp */,
 				CEBCFF351AD7A4940086B134 /* UserDot.h */,
-				CEF3D2791ADE371200F3E995 /* b2Util.cpp */,
-				CEF3D27A1ADE371200F3E995 /* b2Util.h */,
 				CEE3A9841AE742D300DAB429 /* DarkMazeSpec.cpp */,
 				CEE3A9851AE742D300DAB429 /* DarkMazeSpec.h */,
 				CEE747C31B3406B20083499B /* GameScene.cpp */,
 				CEE747C41B3406B20083499B /* GameScene.h */,
+				CEE73A6D1B3BC86100CC3AEA /* DebugMap.cpp */,
+				CEE73A6E1B3BC86100CC3AEA /* DebugMap.h */,
 			);
 			name = Classes;
 			path = ../Classes;
@@ -406,6 +413,19 @@
 				CEE5201D1AE8D55E00122252 /* AlertView.mm */,
 			);
 			path = ios;
+			sourceTree = "<group>";
+		};
+		CEE68AFE1B37B01F00F278D1 /* b2 */ = {
+			isa = PBXGroup;
+			children = (
+				CEF4CB811B38014C00E9F2D9 /* FPB2DebugDrawLayer.cpp */,
+				CEF4CB821B38014C00E9F2D9 /* FPB2DebugDrawLayer.h */,
+				CEF3D2791ADE371200F3E995 /* b2Util.cpp */,
+				CEF3D27A1ADE371200F3E995 /* b2Util.h */,
+				CEFA33BA1AE5F731002ADE42 /* b2DebugDraw.cpp */,
+				CEFA33BB1AE5F731002ADE42 /* b2DebugDraw.h */,
+			);
+			name = b2;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -525,7 +545,6 @@
 				5087E78017EB970100C73F5D /* Icon-114.png in Resources */,
 				50EF62A217ECD613001EB2F8 /* Icon-29.png in Resources */,
 				CEE976D41B32894800887BA2 /* darkmaze.tmx in Resources */,
-				CEE976D61B32897300887BA2 /* darkmaze.tmx in Resources */,
 				50EF629617ECD46A001EB2F8 /* Icon-40.png in Resources */,
 				5087E78217EB970100C73F5D /* Icon-144.png in Resources */,
 				3EACC98F19EE6D4300EB3C5E /* res in Resources */,
@@ -561,14 +580,17 @@
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				CEFA33BC1AE5F731002ADE42 /* b2DebugDraw.cpp in Sources */,
 				46880B8A19C43A87006E1F66 /* MainScene.cpp in Sources */,
+				CEF4CB831B38014C00E9F2D9 /* FPB2DebugDrawLayer.cpp in Sources */,
 				CEBCFF361AD7A4940086B134 /* UserDot.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				CEFA33BF1AE620FD002ADE42 /* GLES-Render.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
+				CEE73A6F1B3BC86100CC3AEA /* DebugMap.cpp in Sources */,
 				CEE3A9861AE742D300DAB429 /* DarkMazeSpec.cpp in Sources */,
 				CEE520261AE8D55E00122252 /* AlertView.mm in Sources */,
 				CEE747C51B3406B20083499B /* GameScene.cpp in Sources */,
+				CEE68AFD1B37A8FA00F278D1 /* VisibleRect.cpp in Sources */,
 				CEF3D27B1ADE371200F3E995 /* b2Util.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
