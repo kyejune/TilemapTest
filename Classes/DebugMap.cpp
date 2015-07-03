@@ -200,7 +200,10 @@ bool DebugMap::findNext( Vec2 coord ){
         // 기록..
 //        ways[ways.size()-1].push_back( nextEntries[i] );
 //        parentMap[nextEntries[i].x + "x" + nextEntries[i].y ] = coord;
-        parentMap[int(n.x + n.y*tilesLen.width)] = coord;
+//        parentMap[int(n.x + n.y*tilesLen.width)] = coord;
+        
+        dummy.push_back(coord);
+//        parentMap.in
         
         
 //        CCLOG( "    (%lu)길 기록 %d x %d", ways.size()-1, int(nextEntries[i].x), int(nextEntries[i].y) );

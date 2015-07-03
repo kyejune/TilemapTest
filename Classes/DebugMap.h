@@ -43,6 +43,10 @@ private:
     bool findNext( Vec2 coord );
     bool isMarkedCoord( Vec2 coord );
     
+    std::vector<Vec2> dummy;
+//    Map<int, Vec2> pmap;
+//    DictElement map;
+    
     int accumulateDistance( std::string xy, int accumulatedDistance );
 };
 
