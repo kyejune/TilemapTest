@@ -7,7 +7,7 @@
 #include "b2DebugDraw.h"
 #include "GLES-Render.h"
 #include "cocos2dx-alertview/AlertView.h"
-#include "DarkMazeSpec.h"
+#include "D.h"
 //#include "b2DebugDraw.h"
 //#include "FPB2DebugDrawLayer.h"
 #include "DebugMap.h"
@@ -63,9 +63,9 @@ public:
     int coordinates[2];
 //    std::vector<int> getCoord( float x, float y );
 //    std::vector<int> getUserCoord();
-    void setCoord( int x, int y );
-    void setCoordByDirection( DarkMazeSpec::Direction direction );
-    void setLineOfSight( DarkMazeSpec::Direction direction );
+    void setCoord( int x, int y, bool nonAnimation = false, bool ignoreRule = false );
+    void setCoordByDirection( D::Direction direction );
+    void setLineOfSight( D::Direction direction );
     
     
     

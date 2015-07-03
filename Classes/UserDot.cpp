@@ -42,7 +42,8 @@ bool UserDot::init()
     
 //    Sprite::initWithTexture( texture );
     
-    if( this->initWithFile("userdot.png") )
+//    if( this->initWithFile("userdot.png") )
+    if( DrawNode::init() )
     {
 //        this->initWithFile("");
         
@@ -58,20 +59,23 @@ bool UserDot::init()
 //        right->drawCircle(Vec2(radius*2 + r, radius), r, 0, 4, true, 1, 1, Color4F::Color4F::BLUE );
 //        this->addChild( right );
         
-        float w = this->getBoundingBox().size.width;
-        float h = this->getBoundingBox().size.height;
+        float w = 10;//this->getBoundingBox().size.width;
+        float h = 10;//this->getBoundingBox().size.height;
         
-        DrawNode* frame = DrawNode::create();
-        frame->drawRect(Vec2(0,0), Vec2(w, h ), Color4F::Color4F::ORANGE );
+        this->drawSolidCircle(Vec2(0,0), w/2, 0, 16, 1, 1, Color4F::RED );
+        this->drawTriangle( Vec2( -w/4, 0 ), Vec2( 0, h-2 ), Vec2( w/4, 0 ), Color4F::Color4F::RED );
+        
+//        DrawNode* frame = DrawNode::create();
+//        frame->drawRect(Vec2(0,0), Vec2(w, h ), Color4F::Color4F::ORANGE );
+//        
+//        
+//        DrawNode* head = DrawNode::create();
+//        head->drawTriangle( Vec2( w/2, h + 4 ), Vec2( 4, h ), Vec2( w-4, h ), Color4F::Color4F::GREEN );
         
         
-        DrawNode* head = DrawNode::create();
-        head->drawTriangle( Vec2( w/2, h + 8 ), Vec2( 10, h ), Vec2( w-10, h ), Color4F::Color4F::GREEN );
         
-        
-        
-        this->addChild(frame);
-        this->addChild( head );
+//        this->addChild(frame);
+//        this->addChild( head );
         
         
         return true;

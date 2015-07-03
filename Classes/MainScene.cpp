@@ -5,7 +5,7 @@
 //#include "b2DebugDraw.h"
 #include "GLES-Render.h"
 //#include "B2DebugDrawLayer.h"
-#include "DarkMazeSpec.h"
+#include "D.h"
 //#include "cocos2dx-alertview/AlertView.h"
 #include <OpenAL/al.h>
 #include <OpenAL/alc.h>
@@ -25,7 +25,6 @@ bool MainScene::init()
     }
     
     gameLayer = Layer::create();
-    dmap = DebugMap::create();
 
     // 맵 생성 및 사이즈 맞추기
     Size visibleSize = Director::getInstance()->getWinSize();
@@ -33,13 +32,11 @@ bool MainScene::init()
     
     this->tmapBg = TMXTiledMap::create("./darkmaze.tmx");
     
-    DarkMazeSpec::mapWidth  = tmapBg->getContentSize().width;
-    DarkMazeSpec::mapHeight = tmapBg->getContentSize().height;
-    DarkMazeSpec::canvasScaleX = visibleSize.width/DarkMazeSpec::mapWidth;
-    DarkMazeSpec::canvasScaleY = visibleSize.height/DarkMazeSpec::mapHeight;
-    DarkMazeSpec::stepW = DarkMazeSpec::mapWidth/DarkMazeSpec::stepWidthMax;
-    DarkMazeSpec::stepH = DarkMazeSpec::mapHeight/DarkMazeSpec::stepHeightMax;
+    D::mapSize = Size( tmapBg->getContentSize().width, tmapBg->getContentSize().height );
+    D::canvasScale = Size( visibleSize.width/D::mapSize.width, visibleSize.height/D::mapSize.height );
+    D::stepSize = Size( tmapBg->getTileSize().width/2, tmapBg->getTileSize().height/2 );
     
+    dmap = DebugMap::create();
     
     
     // 유저 생성
@@ -55,7 +52,7 @@ bool MainScene::init()
     
     // 맵 파싱
 //    settingBox2d();
-//    parseMap( std::string( "./darkmaze.tmx" ) );
+//    parseMap( std::string( "./D.tmx" ) );
     
     // touch 관련
     auto swipeListener = EventListenerTouchOneByOne::create();
@@ -70,19 +67,17 @@ bool MainScene::init()
     this->addChild( gameLayer );
     gameLayer->addChild( tmapBg, 0 );
     gameLayer->addChild( ud, 1 );
-    gameLayer->setContentSize( Size( DarkMazeSpec::mapWidth, DarkMazeSpec::mapHeight ) );
+    gameLayer->setContentSize( Size( D::mapSize.width, D::mapSize.height ) );
     gameLayer->setAnchorPoint( Vec2::ANCHOR_BOTTOM_LEFT );
     
     dmap->parseMap( tmapBg );
     gameLayer->addChild( dmap );
     
-//    CCLOG( "1 getColorMap: %f x %f ", DarkMazeSpec::mapWidth, DarkMazeSpec::mapHeight );
-//    dmap->getColorMap();
     
-//    fixUserAtCenter();
-//    this->scheduleUpdate();
+    setCoord( 8, 0, true, true );
     
-    
+    fixUserAtCenter();
+    this->scheduleUpdate();
     
     return true;
 }
@@ -154,14 +149,14 @@ void MainScene::update(float dt)
                 CCLOG("SWIPED LEFT");
                 
                 isTouchDown = false;
-                setLineOfSight( DarkMazeSpec::LEFT );
+                setLineOfSight( D::LEFT );
             }
             else if (initialTouchPos[0] - currentTouchPos[0] < - visibleSize.width * 0.05)
             {
                 CCLOG("SWIPED RIGHT");
                 
                 isTouchDown = false;
-                setLineOfSight( DarkMazeSpec::RIGHT );
+                setLineOfSight( D::RIGHT );
             }
         }else{
             if (initialTouchPos[1] - currentTouchPos[1] > visibleSize.width * 0.05)
@@ -169,14 +164,14 @@ void MainScene::update(float dt)
                 CCLOG("SWIPED DOWN");
                 
                 isTouchDown = false;
-                setCoordByDirection( DarkMazeSpec::TOP );
+                setCoordByDirection( D::TOP );
             }
             else if (initialTouchPos[1] - currentTouchPos[1] < - visibleSize.width * 0.05)
             {
                 CCLOG("SWIPED UP");
                 
                 isTouchDown = false;
-                setCoordByDirection( DarkMazeSpec::BOTTOM );
+                setCoordByDirection( D::BOTTOM );
             }
         }
     }
@@ -189,13 +184,13 @@ void MainScene::update(float dt)
 }
 
 
-void MainScene::setLineOfSight( DarkMazeSpec::Direction direction ){
+void MainScene::setLineOfSight( D::Direction direction ){
     switch ( direction ) {
-        case DarkMazeSpec::RIGHT:
+        case D::RIGHT:
             nextRot = gameLayer->getRotation() + 90;
             break;
             
-        case DarkMazeSpec::LEFT:
+        case D::LEFT:
             nextRot = gameLayer->getRotation() - 90;
             break;
             
@@ -210,21 +205,32 @@ void MainScene::setLineOfSight( DarkMazeSpec::Direction direction ){
     isMoving = true;
 }
 
-void MainScene::setCoord( int x, int y ){
+void MainScene::setCoord( int x, int y, bool nonAnimation, bool ignoreRule ){
     
-    CCLOG( "setCoord %d, %d ==> %f, %f :", x, y, x*DarkMazeSpec::stepW, y*DarkMazeSpec::stepH  );
+    CCLOG( "setCoord %d, %d ==> %f, %f :", x, y, x*D::stepSize.width, y*D::stepSize.height  );
+    
+    if( ignoreRule == false ){
+        switch ( dmap->checkLoad( coordinates[0], coordinates[1], x, y) ) {
+            case D::PASS:
+                CCLOG("이동");
+                break;
+                
+            default:
+                CCLOG("이동못함");
+                return;
+                break;
+        }
+    }
+    
     
     Vec2 prev = ud->getPosition();
-    nextPos = Vec2( x*DarkMazeSpec::stepW + DarkMazeSpec::stepW/2, y*DarkMazeSpec::stepH + DarkMazeSpec::stepH/2 );
+    nextPos = Vec2( x*D::stepSize.width + D::stepSize.width/2, y*D::stepSize.height + D::stepSize.height/2 );
    
-    
     coordinates[0] = x;
     coordinates[1] = y;
   
-    ud->runAction(MoveTo::create( 0.5, nextPos ));
-//    ud->runAction( Sequence::create( MoveTo::create( 0.5, nextPos ),
-//                                           CallFunc::create( CC_CALLBACK_0( MainScene::doneMoving, this )), NULL ));
-//    isMoving = true;
+    if( nonAnimation ) ud->setPosition( nextPos );
+    else               ud->runAction( MoveTo::create( 0.5, nextPos ) );
 }
 
 
@@ -267,7 +273,7 @@ Vec2 MainScene::rotatePoint( Vec2 anchor, Vec2 point, float angle ){
 }
 
 
-void MainScene::setCoordByDirection( DarkMazeSpec::Direction direction ){
+void MainScene::setCoordByDirection( D::Direction direction ){
     
     const int d[4] = { 0, 90, 180, -90 };
     int swipeR     = d[direction];

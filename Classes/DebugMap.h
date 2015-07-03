@@ -10,6 +10,9 @@
 #define __TilemapTest__DebugMap__
 
 #include <stdio.h>
+#include "D.h"
+#include <unordered_map>
+USING_NS_CC;
 
 class DebugMap: public cocos2d::DrawNode{
   
@@ -21,15 +24,26 @@ public:
     
     
     void parseMap( cocos2d::TMXTiledMap* tmap );
-    void getColorMap();
+    D::Load checkLoad( int startCoordX, int startCoordY, int endCoordX, int endCoordY );
+    int getFastDistance( int startCoordX, int startCoordY, int endCoordX, int endCoordY );
+    
+    Size tilesLen;
+    Size tilesSize;
+    
     
     
 private:
-    
     float PTM_RATIO = 32;
+    Vec2 goal;
+    Vec2 start;
+    std::vector< std::vector<Vec2>> wallSeg;
+    std::unordered_map< int, Vec2 > parentMap = {};
+    std::vector<Vec2> closedCoords;
+    std::vector<Vec2> getOpenTiles( Vec2 coord );
+    bool findNext( Vec2 coord );
+    bool isMarkedCoord( Vec2 coord );
     
-    bool testLine( float p0_x, float p0_y, float p1_x, float p1_y, float p2_x, float p2_y, float p3_x, float p3_y, float *i_x, float *i_y );
-    
+    int accumulateDistance( std::string xy, int accumulatedDistance );
 };
 
 

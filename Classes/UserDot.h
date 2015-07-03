@@ -13,7 +13,7 @@
 
 USING_NS_CC;
 
-class UserDot: public cocos2d::Sprite
+class UserDot: public cocos2d::DrawNode
 {
 public:
     UserDot()

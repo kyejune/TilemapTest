@@ -16,7 +16,7 @@
 #include "b2DebugDraw.h"
 #include "GLES-Render.h"
 #include "cocos2dx-alertview/AlertView.h"
-#include "DarkMazeSpec.h"
+#include "D.h"
 
 
 class GameScene : public cocos2d::Scene {
